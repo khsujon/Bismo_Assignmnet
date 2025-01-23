@@ -10,8 +10,79 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: Colors.white,
+      body: SafeArea(
+          child: Padding(
+        padding: EdgeInsets.only(
+            top: height * 0.01, left: width * 0.04, right: width * 0.04),
+        child: Column(
+          children: [
+            //header
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                //Profile image
+                Stack(
+                  children: [
+                    Container(
+                      height: height * 0.05,
+                      width: height * 0.05,
+                      decoration: BoxDecoration(
+                        color: Colors.amber,
+                        borderRadius: BorderRadius.circular(height * 0.03),
+                      ),
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(height * 0.03),
+                        child: Image.asset(
+                          "assets/images/avtar.png",
+                          fit: BoxFit
+                              .cover, // Ensures the image covers the entire container
+                        ),
+                      ),
+                    ),
+                    Positioned(
+                      bottom: 0,
+                      right: -1,
+                      child: Container(
+                        padding: EdgeInsets.all(1),
+                        height: height * 0.025,
+                        width: height * 0.025,
+                        decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(height * 0.02)),
+                        child: Center(
+                            child: Image.asset("assets/images/down.png")),
+                      ),
+                    )
+                  ],
+                ),
+
+                //Search bar and notification
+                Row(
+                  children: [
+                    Image.asset("assets/images/search_icn.png",
+                        height: height * 0.08),
+                    SizedBox(
+                      width: width * 0.01,
+                    ),
+                    Image.asset(
+                      "assets/images/notification.png",
+                      height: height * 0.04,
+                    )
+                  ],
+                )
+              ],
+            )
+
+            //carousel card
+
+            //giftcard list
+          ],
+        ),
+      )),
     );
   }
 }
