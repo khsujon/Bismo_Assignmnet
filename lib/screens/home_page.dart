@@ -1,3 +1,4 @@
+import 'package:bismo_assignmnet/widgets/card_carousel.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -31,11 +32,14 @@ class _HomePageState extends State<HomePage> {
                       height: height * 0.05,
                       width: height * 0.05,
                       decoration: BoxDecoration(
-                        color: Colors.amber,
+                        color: Colors.white,
+                        border: Border.all(
+                            color: Colors.grey, width: 1), // Red border
                         borderRadius: BorderRadius.circular(height * 0.03),
                       ),
                       child: ClipRRect(
-                        borderRadius: BorderRadius.circular(height * 0.03),
+                        borderRadius: BorderRadius.circular(height * 0.03 -
+                            1), // Adjust to account for the border width
                         child: Image.asset(
                           "assets/images/avtar.png",
                           fit: BoxFit
@@ -44,8 +48,8 @@ class _HomePageState extends State<HomePage> {
                       ),
                     ),
                     Positioned(
-                      bottom: 0,
-                      right: -1,
+                      bottom: -2.5,
+                      right: -3.5,
                       child: Container(
                         padding: EdgeInsets.all(1),
                         height: height * 0.025,
@@ -75,9 +79,14 @@ class _HomePageState extends State<HomePage> {
                   ],
                 )
               ],
-            )
+            ),
 
-            //carousel card
+            SizedBox(
+              height: height * 0.05,
+            ),
+
+            //carousel card with page view
+            CardCarousel(),
 
             //giftcard list
           ],
