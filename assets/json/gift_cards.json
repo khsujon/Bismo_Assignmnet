@@ -1,0 +1,93 @@
+[
+    {
+      "storeName": "Starbucks",
+      "cardType": "Gift Card",
+      "storeImagePath": "assets/images/star_bucks.png",
+      "barcodeNumber": "123456789012"
+    },
+    {
+      "storeName": "Amazon",
+      "cardType": "Gift Card",
+      "storeImagePath": "assets/images/amazon.png",
+      "barcodeNumber": "234567890123"
+    },
+    {
+      "storeName": "Walmart",
+      "cardType": "Gift Card",
+      "storeImagePath": "assets/images/walmart.png",
+      "barcodeNumber": "345678901234"
+    },
+    {
+      "storeName": "Target",
+      "cardType": "Gift Card",
+      "storeImagePath": "assets/images/target.png",
+      "barcodeNumber": "456789012345"
+    },
+    {
+      "storeName": "Apple",
+      "cardType": "Gift Card",
+      "storeImagePath": "assets/images/apple.png",
+      "barcodeNumber": "567890123456"
+    },
+    {
+      "storeName": "Google Play",
+      "cardType": "Gift Card",
+      "storeImagePath": "assets/images/google_play.png",
+      "barcodeNumber": "678901234567"
+    },
+    {
+      "storeName": "Best Buy",
+      "cardType": "Gift Card",
+      "storeImagePath": "assets/images/best_buy.png",
+      "barcodeNumber": "789012345678"
+    },
+    {
+      "storeName": "eBay",
+      "cardType": "Gift Card",
+      "storeImagePath": "assets/images/ebay.png",
+      "barcodeNumber": "890123456789"
+    },
+    {
+      "storeName": "Subway",
+      "cardType": "Gift Card",
+      "storeImagePath": "assets/images/subway.png",
+      "barcodeNumber": "901234567890"
+    },
+    {
+      "storeName": "Uber Eats",
+      "cardType": "Gift Card",
+      "storeImagePath": "assets/images/uber_eats.png",
+      "barcodeNumber": "012345678901"
+    },
+    {
+      "storeName": "Netflix",
+      "cardType": "Subscription Card",
+      "storeImagePath": "assets/images/netflix.png",
+      "barcodeNumber": "112233445566"
+    },
+    {
+      "storeName": "Spotify",
+      "cardType": "Subscription Card",
+      "storeImagePath": "assets/images/spotify.png",
+      "barcodeNumber": "223344556677"
+    },
+    {
+      "storeName": "Xbox",
+      "cardType": "Gift Card",
+      "storeImagePath": "assets/images/xbox.png",
+      "barcodeNumber": "334455667788"
+    },
+    {
+      "storeName": "PlayStation",
+      "cardType": "Gift Card",
+      "storeImagePath": "assets/images/playstation.png",
+      "barcodeNumber": "445566778899"
+    },
+    {
+      "storeName": "Nike",
+      "cardType": "Gift Card",
+      "storeImagePath": "assets/images/nike.png",
+      "barcodeNumber": "556677889900"
+    }
+  ]
+  

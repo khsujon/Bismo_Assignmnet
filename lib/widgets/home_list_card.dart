@@ -5,12 +5,16 @@ class HomeListCard extends StatefulWidget {
   String storeImagePath;
   String storeName;
   String cardType;
-  HomeListCard({
-    Key? key,
-    required this.storeImagePath,
-    required this.storeName,
-    required this.cardType,
-  }) : super(key: key);
+  bool isNotified;
+  Color cardColor;
+  HomeListCard(
+      {Key? key,
+      required this.storeImagePath,
+      required this.storeName,
+      required this.cardType,
+      required this.cardColor,
+      required this.isNotified})
+      : super(key: key);
 
   @override
   State<HomeListCard> createState() => _HomeListCardState();
@@ -26,10 +30,10 @@ class _HomeListCardState extends State<HomeListCard> {
       children: [
         Container(
           width: width,
-          height: height * 0.11,
+          height: height * 0.12,
           padding: EdgeInsets.symmetric(horizontal: width * 0.07),
           decoration: BoxDecoration(
-              color: Colors.lightBlue,
+              color: widget.cardColor,
               borderRadius: BorderRadius.circular(width * 0.06)),
           child: Row(
             children: [
@@ -71,23 +75,25 @@ class _HomeListCardState extends State<HomeListCard> {
             ],
           ),
         ),
-        Positioned(
-          top: -1,
-          right: -1,
-          child: Container(
-            padding: EdgeInsets.all(1),
-            height: height * 0.03,
-            width: height * 0.03,
-            decoration: BoxDecoration(
-                color: Colors.red.withOpacity(0.95),
-                borderRadius: BorderRadius.circular(height * 0.02)),
-            child: Center(
-                child: Text(
-              "1",
-              style: TextStyle(color: Colors.white),
-            )),
-          ),
-        )
+        widget.isNotified
+            ? Positioned(
+                top: -1,
+                right: -0.2,
+                child: Container(
+                  padding: EdgeInsets.all(1),
+                  height: height * 0.03,
+                  width: height * 0.03,
+                  decoration: BoxDecoration(
+                      color: Colors.red.withOpacity(0.95),
+                      borderRadius: BorderRadius.circular(height * 0.02)),
+                  child: Center(
+                      child: Text(
+                    "1",
+                    style: TextStyle(color: Colors.white),
+                  )),
+                ),
+              )
+            : SizedBox()
       ],
     );
   }

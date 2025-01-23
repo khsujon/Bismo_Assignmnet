@@ -96,17 +96,47 @@ class _HomePageState extends State<HomePage> {
             Expanded(
               child: ListView(
                 children: [
+                  SizedBox(
+                    height: height * 0.005,
+                  ),
                   HomeListCard(
-                      storeImagePath: "assets/images/star_buks.png",
-                      storeName: "Stars Caffee",
-                      cardType: "Gift Card"),
+                    storeImagePath: "assets/images/star_buks.png",
+                    storeName: "Stars Caffee",
+                    cardType: "Gift Card",
+                    isNotified: true,
+                    cardColor: Color(0xffc8d5ff),
+                  ),
                   SizedBox(
                     height: height * 0.02,
                   ),
                   HomeListCard(
                       storeImagePath: "assets/images/star_buks.png",
                       storeName: "Stars Caffee",
-                      cardType: "Gift Card"),
+                      cardType: "Gift Card",
+                      isNotified: false,
+                      cardColor: Color(0xffcdc8ff)),
+                  SizedBox(
+                    height: height * 0.02,
+                  ),
+                  HomeListCard(
+                    storeImagePath: "assets/images/star_buks.png",
+                    storeName: "Stars Caffee",
+                    cardType: "Gift Card",
+                    isNotified: true,
+                    cardColor: Color(0xffc8d5ff),
+                  ),
+                  SizedBox(
+                    height: height * 0.02,
+                  ),
+                  HomeListCard(
+                      storeImagePath: "assets/images/star_buks.png",
+                      storeName: "Stars Caffee",
+                      cardType: "Gift Card",
+                      isNotified: false,
+                      cardColor: Color(0xffffc8d7)),
+                  SizedBox(
+                    height: height * 0.02,
+                  ),
                 ],
               ),
             )
