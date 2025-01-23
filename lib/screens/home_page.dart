@@ -1,4 +1,5 @@
 import 'package:bismo_assignmnet/widgets/card_carousel.dart';
+import 'package:bismo_assignmnet/widgets/home_list_card.dart';
 import 'package:flutter/material.dart';
 
 class HomePage extends StatefulWidget {
@@ -88,7 +89,27 @@ class _HomePageState extends State<HomePage> {
             //carousel card with page view
             CardCarousel(),
 
+            SizedBox(
+              height: height * 0.05,
+            ),
             //giftcard list
+            Expanded(
+              child: ListView(
+                children: [
+                  HomeListCard(
+                      storeImagePath: "assets/images/star_buks.png",
+                      storeName: "Stars Caffee",
+                      cardType: "Gift Card"),
+                  SizedBox(
+                    height: height * 0.02,
+                  ),
+                  HomeListCard(
+                      storeImagePath: "assets/images/star_buks.png",
+                      storeName: "Stars Caffee",
+                      cardType: "Gift Card"),
+                ],
+              ),
+            )
           ],
         ),
       )),

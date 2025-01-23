@@ -41,7 +41,7 @@ class _CardCarouselState extends State<CardCarousel> {
               dotWidth: 14.0,
               dotHeight: 14.0,
               paintStyle: PaintingStyle.stroke,
-              strokeWidth: 3,
+              strokeWidth: 2,
               dotColor: Colors.grey,
               activeDotColor: Colors.black),
         ),
@@ -51,13 +51,10 @@ class _CardCarouselState extends State<CardCarousel> {
 
   // Helper to Build Cards
   Widget _buildCard(String imagePath) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(horizontal: 8.0),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(12),
-        child: Image.asset(
-          imagePath,
-        ),
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(12),
+      child: Image.asset(
+        imagePath,
       ),
     );
   }
