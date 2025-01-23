@@ -64,7 +64,7 @@ class _HomeListCardState extends State<HomeListCard> {
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.w500),
                   ),
                   SizedBox(
-                    height: 10,
+                    height: 5,
                   ),
                   Text(
                     widget.cardType,

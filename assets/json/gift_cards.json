@@ -2,25 +2,25 @@
     {
       "storeName": "Starbucks",
       "cardType": "Gift Card",
-      "storeImagePath": "assets/images/star_bucks.png",
+      "storeImagePath": "assets/images/star_buks.png",
       "barcodeNumber": "123456789012"
     },
     {
-      "storeName": "Amazon",
-      "cardType": "Gift Card",
-      "storeImagePath": "assets/images/amazon.png",
+      "storeName": "Natuzzi",
+      "cardType": "Rewards",
+      "storeImagePath": "assets/images/natuzzi.png",
       "barcodeNumber": "234567890123"
     },
     {
-      "storeName": "Walmart",
-      "cardType": "Gift Card",
-      "storeImagePath": "assets/images/walmart.png",
+      "storeName": "Chipotle",
+      "cardType": "Loyalty Card",
+      "storeImagePath": "assets/images/Chipotle.png",
       "barcodeNumber": "345678901234"
     },
     {
-      "storeName": "Target",
-      "cardType": "Gift Card",
-      "storeImagePath": "assets/images/target.png",
+      "storeName": "Molteni & C",
+      "cardType": "Rewards",
+      "storeImagePath": "assets/images/Molteni&C.png",
       "barcodeNumber": "456789012345"
     },
     {
@@ -31,7 +31,7 @@
     },
     {
       "storeName": "Google Play",
-      "cardType": "Gift Card",
+      "cardType": "Loyalty Card",
       "storeImagePath": "assets/images/google_play.png",
       "barcodeNumber": "678901234567"
     },
@@ -43,7 +43,7 @@
     },
     {
       "storeName": "eBay",
-      "cardType": "Gift Card",
+      "cardType": "Loyalty Card",
       "storeImagePath": "assets/images/ebay.png",
       "barcodeNumber": "890123456789"
     },
@@ -55,14 +55,14 @@
     },
     {
       "storeName": "Uber Eats",
-      "cardType": "Gift Card",
-      "storeImagePath": "assets/images/uber_eats.png",
+      "cardType": "Loyalty Card",
+      "storeImagePath": "assets/images/ubar_eats.png",
       "barcodeNumber": "012345678901"
     },
     {
       "storeName": "Netflix",
       "cardType": "Subscription Card",
-      "storeImagePath": "assets/images/netflix.png",
+      "storeImagePath": "assets/images/Netflix.png",
       "barcodeNumber": "112233445566"
     },
     {
@@ -72,20 +72,8 @@
       "barcodeNumber": "223344556677"
     },
     {
-      "storeName": "Xbox",
-      "cardType": "Gift Card",
-      "storeImagePath": "assets/images/xbox.png",
-      "barcodeNumber": "334455667788"
-    },
-    {
-      "storeName": "PlayStation",
-      "cardType": "Gift Card",
-      "storeImagePath": "assets/images/playstation.png",
-      "barcodeNumber": "445566778899"
-    },
-    {
       "storeName": "Nike",
-      "cardType": "Gift Card",
+      "cardType": "Loyalty Card",
       "storeImagePath": "assets/images/nike.png",
       "barcodeNumber": "556677889900"
     }

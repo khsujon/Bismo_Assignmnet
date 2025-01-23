@@ -92,6 +92,7 @@ class _HomePageState extends State<HomePage> {
             SizedBox(
               height: height * 0.05,
             ),
+
             //giftcard list
             Expanded(
               child: ListView(
@@ -110,16 +111,16 @@ class _HomePageState extends State<HomePage> {
                     height: height * 0.02,
                   ),
                   HomeListCard(
-                      storeImagePath: "assets/images/star_buks.png",
-                      storeName: "Stars Caffee",
-                      cardType: "Gift Card",
+                      storeImagePath: "assets/images/natuzzi.png",
+                      storeName: "Natuzzi",
+                      cardType: "Coupon Card",
                       isNotified: false,
                       cardColor: Color(0xffcdc8ff)),
                   SizedBox(
                     height: height * 0.02,
                   ),
                   HomeListCard(
-                    storeImagePath: "assets/images/star_buks.png",
+                    storeImagePath: "assets/images/Molteni&C.png",
                     storeName: "Stars Caffee",
                     cardType: "Gift Card",
                     isNotified: true,
