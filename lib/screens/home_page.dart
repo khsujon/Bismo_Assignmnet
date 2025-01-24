@@ -1,3 +1,4 @@
+import 'package:bismo_assignmnet/screens/add_card_page.dart';
 import 'package:bismo_assignmnet/screens/search_page.dart';
 import 'package:bismo_assignmnet/widgets/card_carousel.dart';
 import 'package:bismo_assignmnet/widgets/home_list_card.dart';
@@ -159,27 +160,31 @@ class _HomePageState extends State<HomePage> {
       floatingActionButton: SizedBox(
         height: height * 0.06,
         width: width * 0.45,
-        child: Transform.translate(
-          offset: Offset(0, -40),
-          child: FloatingActionButton(
-            onPressed: () {},
-            backgroundColor: Color(0xffDBE3FA),
-            shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(15),
-            ),
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Icon(Icons.add, size: 20),
-                  SizedBox(width: 5),
-                  Text(
-                    "Add to Wallet",
-                    style: TextStyle(fontSize: 16),
-                  ),
-                ],
-              ),
+        child: FloatingActionButton(
+          onPressed: () {
+            print('Floating Action Button Clicked');
+            Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => AddCardPage(),
+                ));
+          },
+          backgroundColor: Color(0xffDBE3FA),
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(15),
+          ),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 10.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.center,
+              children: [
+                Icon(Icons.add, size: 20),
+                SizedBox(width: 5),
+                Text(
+                  "Add to Wallet",
+                  style: TextStyle(fontSize: 16),
+                ),
+              ],
             ),
           ),
         ),
