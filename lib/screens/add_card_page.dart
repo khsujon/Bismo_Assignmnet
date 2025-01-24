@@ -1,3 +1,4 @@
+import 'package:bismo_assignmnet/screens/manual_added_page.dart';
 import 'package:bismo_assignmnet/screens/scanned_result.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
@@ -92,7 +93,13 @@ class _AddCardPageState extends State<AddCardPage> {
                 child: Text("Cancel", style: TextStyle(color: Colors.white)),
               ),
               ElevatedButton(
-                onPressed: () {},
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                        builder: (context) => ManualAddedPage(),
+                      ));
+                },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Color(0xffDBE3FA),
                   padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
