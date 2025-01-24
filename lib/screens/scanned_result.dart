@@ -8,14 +8,43 @@ class ScannedResultPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
+
     return Scaffold(
-      appBar: AppBar(
-        title: Text("Scanned Result"),
-      ),
-      body: Center(
-        child: Text(
-          "Scanned Value: $scannedValue",
-          style: TextStyle(fontSize: 18),
+      backgroundColor: Color(0xff00643c),
+      body: SafeArea(
+        child: Padding(
+          padding: EdgeInsets.only(
+            top: height * 0.03,
+            left: width * 0.04,
+            right: width * 0.04,
+          ),
+          child: Column(
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  // Back button with functionality
+                  GestureDetector(
+                    onTap: () {
+                      Navigator.pop(context);
+                    },
+                    child: Icon(Icons.arrow_back_ios_new, color: Colors.white),
+                  ),
+
+                  Icon(
+                    Icons.more_vert,
+                    color: Colors.white,
+                  )
+                ],
+              ),
+              Text(
+                "Scanned Value: $scannedValue",
+                style: TextStyle(fontSize: 18),
+              ),
+            ],
+          ),
         ),
       ),
     );
