@@ -1,3 +1,4 @@
+import 'package:bismo_assignmnet/screens/search_page.dart';
 import 'package:bismo_assignmnet/widgets/card_carousel.dart';
 import 'package:bismo_assignmnet/widgets/home_list_card.dart';
 import 'package:flutter/material.dart';
@@ -68,8 +69,17 @@ class _HomePageState extends State<HomePage> {
                 //Search bar and notification
                 Row(
                   children: [
-                    Image.asset("assets/images/search_icn.png",
-                        height: height * 0.08),
+                    InkWell(
+                      onTap: () {
+                        Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) => SearchPage(),
+                            ));
+                      },
+                      child: Image.asset("assets/images/search_icn.png",
+                          height: height * 0.08),
+                    ),
                     SizedBox(
                       width: width * 0.01,
                     ),
