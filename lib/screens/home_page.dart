@@ -154,6 +154,36 @@ class _HomePageState extends State<HomePage> {
           ],
         ),
       )),
+
+      //Add Wallet button
+      floatingActionButton: SizedBox(
+        height: height * 0.06,
+        width: width * 0.45,
+        child: Transform.translate(
+          offset: Offset(0, -40),
+          child: FloatingActionButton(
+            onPressed: () {},
+            backgroundColor: Color(0xffDBE3FA),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(15),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10.0),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(Icons.add, size: 20),
+                  SizedBox(width: 5),
+                  Text(
+                    "Add to Wallet",
+                    style: TextStyle(fontSize: 16),
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ),
     );
   }
 }
