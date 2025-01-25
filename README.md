@@ -1,16 +1,31 @@
-# bismo_assignmnet
+# Gift & Loyalty Cards App  
 
-A new Flutter project.
+**Gift & Loyalty Cards App** is a fully responsive Flutter application for managing gift cards and loyalty cards. The app allows users to scan barcodes, view card details, and display them with an intuitive and visually appealing interface.  
 
-## Getting Started
+## Features  
 
-This project is a starting point for a Flutter application.
+- **Home Screen**: Displays a list of gift and loyalty cards fetched from local JSON data.  
+- **Card Details Screen**: Shows detailed information, including the store name, barcode image, and barcode number.  
+- **Barcode Scanner**: Integrates the device camera to scan barcodes and display the scanned number.  
+- **Responsive Design**: The app is fully responsive and works seamlessly on both Android and iOS devices.  
+- **Dummy Data**: Uses local JSON files to simulate real-world card data.  
 
-A few resources to get you started if this is your first Flutter project:
+---
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+## Dependencies  
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+The following Flutter packages are used in this project:  
+- **google_fonts**: To style text with beautiful fonts from Google Fonts.  
+- **smooth_page_indicator**: For creating smooth and customizable page indicators.  
+- **flutter_barcode_scanner**: To enable barcode scanning functionality.  
+- **barcode_widget**: To generate and display barcode images.  
+
+Add these dependencies to your `pubspec.yaml` file:  
+```yaml
+dependencies:
+  flutter:
+    sdk: flutter
+  google_fonts: ^6.2.1
+  smooth_page_indicator: ^1.0.0
+  flutter_barcode_scanner: ^2.0.0
+  barcode_widget: ^2.0.1
