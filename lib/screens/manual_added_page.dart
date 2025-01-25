@@ -213,7 +213,10 @@ class _ManualAddedPageState extends State<ManualAddedPage> {
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) => ScannedResultPage(
+                                    storeName: "Nike",
+                                    cardType: "Gift",
                                     scannedValue: memberIdController.text,
+                                    imagePath: "assets/images/apple.png",
                                   ),
                                 ));
                           },

@@ -44,10 +44,11 @@ class _SearchPageState extends State<SearchPage> {
     }
   }
 
+// Show all data if the search query is empty
   void filterData(String query) {
     setState(() {
       if (query.isEmpty) {
-        filteredData = allData; // Show all data if the search query is empty
+        filteredData = allData;
       } else {
         filteredData = allData.where((store) {
           final storeName = store.storeName!.toLowerCase();

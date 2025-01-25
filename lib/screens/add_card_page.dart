@@ -1,5 +1,7 @@
 import 'package:bismo_assignmnet/screens/manual_added_page.dart';
 import 'package:bismo_assignmnet/screens/scanned_result.dart';
+
+import 'package:bismo_assignmnet/sevices/json_services.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_barcode_scanner/flutter_barcode_scanner.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -11,6 +13,7 @@ class AddCardPage extends StatefulWidget {
 
 class _AddCardPageState extends State<AddCardPage> {
   String scannedCode = "";
+  final JsonServices _storeService = JsonServices();
 
   Future<void> scanBarcode() async {
     try {
@@ -20,17 +23,50 @@ class _AddCardPageState extends State<AddCardPage> {
         true,
         ScanMode.BARCODE,
       );
-      if (barcode != "-1") {
-        setState(() {
-          scannedCode = barcode;
-        });
 
-        Navigator.push(
-          context,
-          MaterialPageRoute(
-            builder: (context) => ScannedResultPage(scannedValue: barcode),
-          ),
+      if (barcode != "-1") {
+        final jsonService = JsonServices();
+        final storeDataList = await jsonService.getStoreData();
+
+        // Check if the scanned barcode matches any stored barcode
+        final matchedData = storeDataList.firstWhere(
+          (store) => store.barcodeNumber == barcode,
         );
+
+        if (matchedData != null) {
+          // Barcode matched, navigate to the result page
+          Navigator.push(
+            context,
+            MaterialPageRoute(
+              builder: (context) => ScannedResultPage(
+                scannedValue: barcode,
+                storeName: matchedData.storeName!,
+                cardType: matchedData.cardType!,
+                imagePath: matchedData.storeImagePath!,
+              ),
+            ),
+          );
+        } else {
+          // Barcode not matched, show an error popup
+          showDialog(
+            context: context,
+            builder: (context) => AlertDialog(
+              title: const Text("Error"),
+              content: const Text(
+                "Unknown barcode value!",
+                style: TextStyle(color: Colors.red),
+              ),
+              actions: [
+                TextButton(
+                  onPressed: () {
+                    Navigator.pop(context);
+                  },
+                  child: const Text("OK"),
+                ),
+              ],
+            ),
+          );
+        }
       }
     } catch (e) {
       setState(() {
@@ -82,7 +118,7 @@ class _AddCardPageState extends State<AddCardPage> {
           ),
           SizedBox(height: height * 0.15),
 
-          //this should place in the bottom
+          // This should place in the bottom
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceAround,
             children: [
@@ -95,10 +131,11 @@ class _AddCardPageState extends State<AddCardPage> {
               ElevatedButton(
                 onPressed: () {
                   Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => ManualAddedPage(),
-                      ));
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => ManualAddedPage(),
+                    ),
+                  );
                 },
                 style: ElevatedButton.styleFrom(
                   backgroundColor: Color(0xffDBE3FA),

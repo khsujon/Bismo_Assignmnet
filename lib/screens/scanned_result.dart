@@ -6,8 +6,16 @@ import 'package:google_fonts/google_fonts.dart';
 
 class ScannedResultPage extends StatelessWidget {
   final String scannedValue;
+  final String storeName;
+  final String cardType;
+  final String imagePath;
 
-  const ScannedResultPage({Key? key, required this.scannedValue})
+  const ScannedResultPage(
+      {Key? key,
+      required this.scannedValue,
+      required this.storeName,
+      required this.cardType,
+      required this.imagePath})
       : super(key: key);
 
   @override
@@ -114,7 +122,7 @@ class ScannedResultPage extends StatelessWidget {
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(height * 0.04),
                       child: Image.asset(
-                        "assets/images/star_buks.png",
+                        imagePath,
                         fit: BoxFit.cover,
                       ),
                     ),
@@ -127,7 +135,7 @@ class ScannedResultPage extends StatelessWidget {
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Text(
-                        "Star Caffee",
+                        storeName,
                         style: GoogleFonts.poppins(
                             fontSize: 20,
                             fontWeight: FontWeight.w400,
@@ -137,7 +145,7 @@ class ScannedResultPage extends StatelessWidget {
                         height: 5,
                       ),
                       Text(
-                        "Loyalty Card",
+                        cardType,
                         style: GoogleFonts.poppins(
                             fontSize: 16,
                             fontWeight: FontWeight.w400,
