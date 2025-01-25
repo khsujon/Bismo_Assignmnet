@@ -1,5 +1,3 @@
-import 'package:bismo_assignmnet/screens/add_card_page.dart';
-import 'package:bismo_assignmnet/screens/data_demo_page.dart';
 import 'package:bismo_assignmnet/screens/home_page.dart';
 import 'package:flutter/material.dart';
 

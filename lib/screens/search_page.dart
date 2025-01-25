@@ -1,4 +1,7 @@
+import 'package:bismo_assignmnet/sevices/json_services.dart';
 import 'package:bismo_assignmnet/widgets/all_store_cards.dart';
+import 'package:bismo_assignmnet/data_model/store_data.dart';
+
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
@@ -11,14 +14,50 @@ class SearchPage extends StatefulWidget {
 
 class _SearchPageState extends State<SearchPage> {
   TextEditingController searchTextController = TextEditingController();
-  FocusNode searchFocusNode = FocusNode(); // Declare FocusNode
+  FocusNode searchFocusNode = FocusNode();
+  List<StoreData> allData = [];
+  List<StoreData> filteredData = [];
+  final JsonServices jsonServices = JsonServices();
+
+  @override
+  void initState() {
+    super.initState();
+    fetchData(); // Load data on initialization
+  }
 
   @override
   void dispose() {
-    // Dispose of the focus node and text controller when no longer needed
     searchTextController.dispose();
     searchFocusNode.dispose();
     super.dispose();
+  }
+
+  Future<void> fetchData() async {
+    try {
+      final data = await jsonServices.getStoreData();
+      setState(() {
+        allData = data;
+        filteredData = data; // Initially display all data
+      });
+    } catch (e) {
+      print("Error loading data: $e");
+    }
+  }
+
+  void filterData(String query) {
+    setState(() {
+      if (query.isEmpty) {
+        filteredData = allData; // Show all data if the search query is empty
+      } else {
+        filteredData = allData.where((store) {
+          final storeName = store.storeName!.toLowerCase();
+          final cardType = store.cardType!.toLowerCase();
+          final searchQuery = query.toLowerCase();
+          return storeName.contains(searchQuery) ||
+              cardType.contains(searchQuery);
+        }).toList();
+      }
+    });
   }
 
   @override
@@ -39,14 +78,12 @@ class _SearchPageState extends State<SearchPage> {
             children: [
               Row(
                 children: [
-                  // Back button with functionality
                   GestureDetector(
                     onTap: () {
                       Navigator.pop(context);
                     },
                     child: Icon(Icons.arrow_back_ios_new),
                   ),
-                  // Search field
                   Expanded(
                     child: Padding(
                       padding: EdgeInsets.symmetric(
@@ -56,9 +93,7 @@ class _SearchPageState extends State<SearchPage> {
                       child: TextFormField(
                         controller: searchTextController,
                         focusNode: searchFocusNode,
-                        onChanged: (value) {
-                          setState(() {}); // Update UI on input
-                        },
+                        onChanged: filterData,
                         decoration: InputDecoration(
                           contentPadding: EdgeInsets.symmetric(
                             horizontal: width * 0.05,
@@ -79,44 +114,43 @@ class _SearchPageState extends State<SearchPage> {
                       ),
                     ),
                   ),
-
                   Transform.rotate(
-                    angle: 90 * 3.14159 / 180, // Rotate 90 degrees
+                    angle: 90 * 3.14159 / 180,
                     child: Icon(CupertinoIcons.slider_horizontal_3),
                   )
                 ],
               ),
-              SizedBox(
-                height: height * 0.03,
-              ),
+              SizedBox(height: height * 0.03),
 
-              //all store cards
+              // Display filtered data or a "No data available" message
               Expanded(
-                  child: ListView(
-                children: [
-                  AllStoreCard(
-                    storeImagePath: "assets/images/star_buks.png",
-                    storeName: "Stars Caffee",
-                    cardType: "Gift Card",
-                  ),
-                  SizedBox(
-                    height: height * 0.01,
-                  ),
-                  AllStoreCard(
-                    storeImagePath: "assets/images/natuzzi.png",
-                    storeName: "Natuzzi",
-                    cardType: "Coupon Card",
-                  ),
-                  SizedBox(
-                    height: height * 0.01,
-                  ),
-                  AllStoreCard(
-                    storeImagePath: "assets/images/Molteni&C.png",
-                    storeName: "Stars Caffee",
-                    cardType: "Gift Card",
-                  ),
-                ],
-              ))
+                child: filteredData.isEmpty
+                    ? Center(
+                        child: Text(
+                          "No such data available",
+                          style: TextStyle(
+                            fontSize: 16,
+                            color: Colors.black54,
+                          ),
+                        ),
+                      )
+                    : ListView.builder(
+                        itemCount: filteredData.length,
+                        itemBuilder: (context, index) {
+                          final store = filteredData[index];
+                          return Column(
+                            children: [
+                              AllStoreCard(
+                                storeImagePath: store.storeImagePath!,
+                                storeName: store.storeName!,
+                                cardType: store.cardType!,
+                              ),
+                              SizedBox(height: height * 0.01),
+                            ],
+                          );
+                        },
+                      ),
+              ),
             ],
           ),
         ),
