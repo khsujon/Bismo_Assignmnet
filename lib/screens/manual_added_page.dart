@@ -1,4 +1,5 @@
 import 'package:bismo_assignmnet/screens/scanned_result.dart';
+import 'package:bismo_assignmnet/widgets/custom_button.dart';
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -205,38 +206,19 @@ class _ManualAddedPageState extends State<ManualAddedPage> {
                         const Spacer(),
 
                         //button
-                        Center(
-                          child: InkWell(
-                            onTap: () {
-                              Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) => ScannedResultPage(
-                                      scannedValue: memberIdController.text,
-                                    ),
-                                  ));
-                            },
-                            child: Container(
-                              width: width * .7,
-                              padding: EdgeInsets.symmetric(
-                                  vertical: height * 0.018),
-                              decoration: BoxDecoration(
-                                  color: const Color(0xffDBE3FA),
-                                  borderRadius:
-                                      BorderRadius.circular(width * 0.07)),
-                              child: Center(
-                                child: Text(
-                                  "Add to Amar Wallet",
-                                  style: GoogleFonts.poppins(
-                                    fontSize: 16,
-                                    fontWeight: FontWeight.w400,
-                                    color: Colors.black,
+                        CustomButton(
+                          buttonText: "Add to Amar Wallet",
+                          onTap: () {
+                            Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => ScannedResultPage(
+                                    scannedValue: memberIdController.text,
                                   ),
-                                ),
-                              ),
-                            ),
-                          ),
+                                ));
+                          },
                         ),
+
                         SizedBox(height: height * 0.05),
                       ],
                     ),

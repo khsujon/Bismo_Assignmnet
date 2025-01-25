@@ -31,7 +31,7 @@ class _SearchPageState extends State<SearchPage> {
       body: SafeArea(
         child: Padding(
           padding: EdgeInsets.only(
-            top: height * 0.01,
+            top: height * 0.03,
             left: width * 0.04,
             right: width * 0.04,
           ),
