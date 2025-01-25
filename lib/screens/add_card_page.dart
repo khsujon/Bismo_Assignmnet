@@ -13,7 +13,6 @@ class AddCardPage extends StatefulWidget {
 
 class _AddCardPageState extends State<AddCardPage> {
   String scannedCode = "";
-  final JsonServices _storeService = JsonServices();
 
   Future<void> scanBarcode() async {
     try {
