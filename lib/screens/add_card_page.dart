@@ -125,7 +125,8 @@ class _AddCardPageState extends State<AddCardPage> {
                 onPressed: () {
                   Navigator.pop(context);
                 },
-                child: Text("Cancel", style: TextStyle(color: Colors.white)),
+                child: Text("Cancel",
+                    style: GoogleFonts.poppins(color: Colors.white)),
               ),
               ElevatedButton(
                 onPressed: () {
@@ -145,7 +146,7 @@ class _AddCardPageState extends State<AddCardPage> {
                 ),
                 child: Text(
                   "Enter manually",
-                  style: TextStyle(color: Colors.black),
+                  style: GoogleFonts.poppins(color: Colors.black),
                 ),
               ),
             ],

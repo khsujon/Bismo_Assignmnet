@@ -1,5 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class AllStoreCard extends StatefulWidget {
   String storeImagePath;
@@ -52,14 +53,16 @@ class _AllStoreCardState extends State<AllStoreCard> {
             children: [
               Text(
                 widget.storeName,
-                style: TextStyle(fontSize: 20, fontWeight: FontWeight.w400),
+                style: GoogleFonts.poppins(
+                    fontSize: 20, fontWeight: FontWeight.w400),
               ),
               SizedBox(
                 height: 5,
               ),
               Text(
                 widget.cardType,
-                style: TextStyle(fontSize: 16, fontWeight: FontWeight.w400),
+                style: GoogleFonts.poppins(
+                    fontSize: 16, fontWeight: FontWeight.w400),
               ),
             ],
           )
