@@ -13,13 +13,4 @@ class StoreData {
     storeImagePath = json['storeImagePath'];
     barcodeNumber = json['barcodeNumber'];
   }
-
-  Map<String, dynamic> toJson() {
-    final Map<String, dynamic> data = new Map<String, dynamic>();
-    data['storeName'] = this.storeName;
-    data['cardType'] = this.cardType;
-    data['storeImagePath'] = this.storeImagePath;
-    data['barcodeNumber'] = this.barcodeNumber;
-    return data;
-  }
 }
