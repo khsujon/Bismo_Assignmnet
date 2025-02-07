@@ -18,7 +18,7 @@ The following Flutter packages are used in this project:
 - **google_fonts**: To style text with beautiful fonts from Google Fonts.  
 - **smooth_page_indicator**: For creating smooth and customizable page indicators.  
 - **flutter_barcode_scanner**: To enable barcode scanning functionality.  
-- **barcode_widget**: To generate and display barcode images. 
+- **barcode_widget**: To generate and display barcode images in app.
 
 Add these dependencies to your `pubspec.yaml` file:  
 ```yaml
