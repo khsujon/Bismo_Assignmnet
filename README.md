@@ -41,7 +41,7 @@ flutter pub get
 The project follows a clean and modular folder structure:
 ```bash
 lib/
-├── main.dart             # Entry point of the app
+├── main.dart             # Entry point
 ├── screens/              # Contains all the UI screens
 ├── widgets/              # Custom widgets used across the app
 ├── data_models/          # Data models for cards
